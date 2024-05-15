@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table
+        {
+            margin: 20px;
+            border-collapse: collapse;
+        }
+        tr,th,td {
+            border: 2px solid black;
+            padding: 20px;
+        }
+    </style>
+    </style>
+</head>
+<body>
+    <form>
+        <input type="hidden" id="idvel" />
+        <input type="text" id="nameid" placeholder="Enter name"/>
+        <input type="text" id="subjectid" placeholder="Enter subject"/>
+        <input type="text" id="cityid" placeholder="Enter city"/>
+
+        <input type="submit" value="submit"/>
+    </form>
+
+    
+      <table>
+        <thead id="thid" >
+            <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>subject</th>
+                <th>city</th>
+            </tr>
+
+        </thead>
+  </table>
+  <script>
+    let form = document.querySelector("form")
+    form.addEventListener("submit",function(e){
+       e.preventDefault();
+       console.log("submit button press");
+        
+       let name = document.getElementById("nameid");
+       let subject = document.getElementById("subjectid");
+       let city = document.getElementById("cityid");
+
+       addRecords(name,subject,city);
+         
+    })
+    let counterId = 1;
+    function addRecords(name,subject,city)
+    {
+        let existing_data = JSON.parse(localStorage.getItem("student")) || [];
+    }
+
+    if(existing_data.lenght==0)
+    {
+        let new_js_object = {id : counterId , name : name.value , subject : subject.value , city : city.value };
+                console.log(new_js_object);
+                existing_data.push(new_js_object);
+    }   
+  </script>
+   
+</body>
+</html>
