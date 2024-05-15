@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>math</title>
+
+    <style>
+
+        body{
+            background-color:saddlebrown;
+        }
+        .inp {
+            border: solid 3px black;
+            margin: 30px;
+            padding: 40px;
+            background-color: burlywood;
+            height: 400px;
+            width: 600px;
+            font-size: 20px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .btn{
+            width: 600px;
+            margin: 0 auto;
+
+        }
+
+        .btn button{
+            width: 40px;
+            height: 40px;
+            margin-top: 20px;
+            background-color: black;
+            color: aliceblue;
+
+            
+        }
+        h1{
+            border: 2px solid black;
+            width: 200px;
+            height: 50px;
+            margin: 30px auto;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="inp">
+
+        value1: <input type="text" id="in1"><br><br>
+        value2: <input type="text" id="in2">
+
+        
+        <div class="btn">
+            
+            
+            <button onclick="add()">+</button>
+            <button onclick="sub()">-</button>
+            <button onclick="sip()">*</button><br>
+            <button onclick="div()">/</button>
+            <button onclick="map()">%</button>
+        </div>
+        
+        <h1 id="result">Result</h1>
+        
+    </div>
+
+
+    <script>
+
+        let value1 = document.getElementById("in1")
+        let value2 = document.getElementById("in2")
+
+        let heading = document.getElementById("result")
+
+        function add() {
+            heading.innerText = parseInt(value1.value) + parseInt(value2.value)
+
+        }
+
+        function sub() {
+            heading.innerText = parseFloat(value1.value) - parseFloat(value2.value)
+        }
+
+        function sip() {
+            heading.innerText = parseFloat(value1.value) * parseFloat(value2.value)
+        }
+
+        function div() {
+            heading.innerText = parseFloat(value1.value) / parseFloat(value2.value)
+        }
+
+        function map() {
+            heading = parseFloat(value1) % parseFloat(value2)
+        }
+    </script>
+
+</body>
+
+</html>
